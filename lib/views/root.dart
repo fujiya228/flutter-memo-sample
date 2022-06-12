@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_memo_sample/views/home_page.dart';
+import 'package:flutter_memo_sample/views/edit_page.dart';
 
 class Root extends StatefulWidget {
   const Root({Key? key}) : super(key: key);
@@ -24,7 +25,13 @@ class _RootState extends State<Root> {
           children: pageWidgetList,
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () => {},
+          onPressed: () => {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => const Edit(),
+              ),
+            ),
+          },
           child: const Icon(Icons.edit),
         ),
         bottomNavigationBar: BottomNavigationBar(
